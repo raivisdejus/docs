@@ -39,3 +39,19 @@ Default presets:
 ## Webpack
 
 Read more in [Webpack configuration](/theme/04-Webpack.md)
+
+## Magento config values
+
+To get configuration values from Magneto backend add this to your `di.xml`
+
+```xml
+<type name="Magento\StoreGraphQl\Model\Resolver\Store\StoreConfigDataProvider">
+    <arguments>
+        <argument name="extendedConfigData" xsi:type="array">
+            <item name="some_config_key" xsi:type="string">path/to/some_config_key</item>
+        </argument>
+    </arguments>
+</type>
+```
+
+See example in [Magneto CmsGrapgQl](https://github.com/magento/graphql-ce/blob/2.3-develop/app/code/Magento/CmsGraphQl/etc/graphql/di.xml)
